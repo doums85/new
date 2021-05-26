@@ -1,0 +1,60 @@
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+    text-transform: initial;
+    @include flex(center, center);
+
+    &__attribution {
+        font-size: 1rem;
+    }
+
+    .btn_group {
+        align-self: flex-end;
+    }
+
+    .rules {
+        width: 150px;
+        margin-right: 1rem;
+        padding: 7px 25px;
+        border-radius: .4rem;
+        border: 3px solid $header-outline;
+        color: lighten($header-outline, 20%);
+        background: none;
+        font-weight: 600;
+        letter-spacing: 2px;
+
+        &:hover {
+            background-color: rgba($color: #fff, $alpha: .8);
+            color: $dark-text;
+            cursor: pointer;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $scissors-gradient;
+    }
+
+    /*=========== MEDIA QUERIES FOR IPAD AND IPAD PRO =========*/
+    @media screen and (width: 768px) and (height: 1024px) {
+        bottom: 5.5rem;
+    }
+
+    @media screen and (width: 1024px) and (height: 1366px) {
+        bottom: 26.7rem;
+    }
+
+    @media screen and (max-height: 823px) {
+        bottom: -7.5rem;
+    }
+}
+
+.restart {
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}

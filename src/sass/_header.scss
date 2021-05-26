@@ -1,0 +1,76 @@
+.header {
+    width: 100vw;
+    margin: auto;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(1, max-content);
+    justify-content: center;
+
+    &__container {
+        max-width: 60vw;
+        border: 3px solid $header-outline;
+        margin: 1.875rem auto auto;
+        border-radius: 1rem;
+        padding: 1.25rem;
+        gap: 5rem;
+        display: grid;
+        grid-template-columns: auto max-content;
+
+        @media screen and (min-width: 1420px) {
+            width: 50vw;
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        text-align: left;
+        @include flex;
+        @include flex-column;
+    }
+
+    //! A REVOIR ICI
+    .score-box {
+        padding: .75rem 2.5rem;
+        background-color: #fff;
+        color: $score-text;
+        border-radius: 5px;
+
+        @media screen and (max-width: 768px) {
+            padding: 0.75rem 1.5rem;
+        }
+
+        &__score {
+            color: $dark-text;
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .winning {
+            color: green;
+        }
+
+        .losing {
+            color: crimson;
+        }
+    }
+}
+
+
+/*=========== MEDIA QUERIES =========*/
+@media screen and (max-width: 685px) {
+
+    .header__container {
+        max-width: none;
+        grid-template-columns: max-content;
+        justify-content: center;
+        gap: 1rem;
+
+    }
+
+    .header__title {
+        flex-direction: row;
+        font-size: 1.5rem;
+        gap: .7rem;
+    }
+
+}

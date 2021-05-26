@@ -1,0 +1,81 @@
+/*=========== Import Utilities ==========*/
+@import "./sass/utilities/variables";
+@import "./sass/utilities/mixins";
+
+/*=========== Import Page ==========*/
+@import "./sass/header";
+@import "./sass/play";
+@import "./sass/game";
+@import './sass/modal';
+@import "./sass/footer";
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background: $background-gradient;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  height: 100vh;
+  flex: 1 0 auto;
+
+  .icon {
+    border: 18px solid;
+    transition: transform .2s;
+    padding: 2rem;
+    @include flex(center, center);
+    @include border-radius(50%);
+
+    &__paper {
+      @include icon($paper-gradient);
+
+      &--winner {
+        justify-self: center;
+        @include bigShadow($paper-gradient);
+      }
+
+    }
+
+    &__scissors {
+      @include icon($scissors-gradient);
+
+      &--winner {
+        justify-self: center;
+
+        @include bigShadow($scissors-gradient);
+      }
+    }
+
+    &__rock {
+      @include icon($rock-gradient);
+
+      &--winner {
+        justify-self: center;
+
+        @include bigShadow($rock-gradient);
+      }
+
+    }
+  }
+}

@@ -1,0 +1,107 @@
+.play {
+    position: relative;
+    transform: translateY(20vh);
+    @media screen and (max-height: 667px){
+        transform: translateY(13vh);
+    }
+    @media screen and (width: 1024px) and (height: 1366px) {
+        transform: translateY(15vh);
+    }
+    .items {
+        @include flex(center);
+
+        .icon {
+            height: 160px;
+            width: 160px;
+            border: 18px solid;
+            transition: transform .2s;
+            padding: 2rem;
+            @include flex(center, center);
+            @include border-radius(50%);
+
+            /*=========== MEDIA QUERIES =========*/
+            @media screen and (max-width: 685px) {
+                height: 140px;
+                width: 140px;
+                padding: 1rem;
+            }
+
+            @media screen and (max-width: 414px) {
+                width: 120px;
+                height: 120px;
+            }
+
+            &__paper {
+                transform: translate(0, -22rem);
+                @include icon($paper-gradient);
+
+                &:hover {
+                    transform: translate(0, -22rem) scale(1.1);
+                }
+
+                /*=========== MEDIA QUERIES =========*/
+                @media screen and (max-width: 414px) {
+                    transform: translate(1rem, -21rem);
+
+                    &:hover {
+                        transform: translate(1rem, -21rem) scale(1.1);
+                    }
+                }
+            }
+
+            &__scissors {
+                transform: translate(9rem, -22rem);
+                @include icon($scissors-gradient);
+
+                &:hover {
+                    transform: translate(9rem, -22rem) scale(1.1);
+                }
+
+                /*=========== MEDIA QUERIES =========*/
+
+                @media screen and (max-width: 414px) {
+                    transform: translate(6.5rem, -21rem);
+
+                    &:hover {
+                        transform: translate(6.5rem, -21rem) scale(1.1);
+                    }
+                }
+            }
+
+            &__rock {
+                transform: translate(-10rem, -5rem);
+                @include icon($rock-gradient);
+
+                &:hover {
+                    transform: translate(-10rem, -5rem) scale(1.1);
+                }
+
+                /*=========== MEDIA QUERIES =========*/
+                @media screen and (max-width: 685px) {
+                    transform: translate(-9rem, -5rem);
+
+                    &:hover {
+                        transform: translate(-9rem, -5rem) scale(1.1);
+                    }
+                }
+
+                @media screen and (max-width: 414px) {
+                    transform: translate(-7.5rem, -6rem);
+
+                    &:hover {
+                        transform: translate(-7.5rem, -6rem) scale(1.1);
+                    }
+                }
+
+            }
+
+            img {
+                width: 80%;
+            }
+        }
+    }
+}
+
+/*=========== MEDIA QUERIES =========*/
+
+@media screen and (max-width: 414px) {}

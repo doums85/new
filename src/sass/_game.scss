@@ -1,0 +1,141 @@
+.game {
+    height: calc(100vh - 300px);
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    @include grid-fit(120px, 200px);
+
+    &__you,
+    &__house {
+        display: grid;
+        gap: 1rem;
+        .text{
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    .icon {
+        height: 200px;
+        width: 200px;
+        border: 30px solid !important;
+
+        &__paper {
+            border-color: $paper-gradient !important;
+        }
+
+        &__scissors {
+            border-color: $scissors-gradient !important;
+        }
+
+        &__rock {
+            border-color: $rock-gradient !important;
+        }
+    }
+
+    &__play {
+        gap: 1rem;
+        @include flex;
+        @include flex-column;
+
+        .text {
+            text-transform: uppercase;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+    }
+    &__house{
+       .icon{
+        justify-self: end;
+       }
+       .counter{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-color: rgba($color: #000000, $alpha: .3);
+        font-size: 8rem;
+        margin: auto;
+        @include flex(center, center);
+        @include flex-column;
+    }
+    }
+
+    &__again {
+
+        background-color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 15px 15px;
+        border-radius: 5px;
+        font-size: .9rem;
+        font-weight: 600;
+        color: $score-text;
+
+        &:hover {
+            color: red;
+        }
+
+    }
+/*=========== MEDIA QUERIES IPAD AND IPAD PRO =========*/
+    @media screen and (width: 1024px) and (min-height: 1366px){
+        transform: translateY(-14rem);
+    }
+
+    @media screen and (max-width: 749px) {
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-around;
+        gap: 1rem;
+        &__play{
+            grid-row: 2/3;
+            grid-column: 1/-1;
+            align-self: center;
+            margin: 1.5rem 0 15rem 0!important;
+        }
+        &__again{
+            width: 250px;
+            margin: auto auto 8rem auto;
+        }
+    }
+    @media screen and (max-width: 414px) {
+        .counter{
+            height: 120px;
+            width: 120px;
+            font-size: 5rem;
+        }
+        .icon{
+            height: 120px;
+            width: 120px;
+            border: 15px solid !important;
+            justify-content: center;
+            &__paper {
+                border-color: $paper-gradient !important;
+            }
+    
+            &__scissors {
+                border-color: $scissors-gradient !important;
+            }
+    
+            &__rock {
+                border-color: $rock-gradient !important;
+            }
+        }
+        .game__you,
+        .game__house {
+            display: grid;
+            gap: 1rem;
+            .text{
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin: 1.5rem 0 1rem;
+            }
+        }
+    }
+
+}
+
+.hidden {
+    display: none;
+}
